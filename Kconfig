@@ -1,0 +1,37 @@
+mainmenu "Example project Configuration"
+
+source "buildsystem/Kconfig"
+
+config PLACEHOLDER_FOR_STATIC_STUFF_UWU
+  def_bool y
+  select BUILD_IS_EXECUTABLE
+  # select BUILD_IS_LIBRARY
+  # select BUILD_IS_KERNEL
+  # select BUILD_ALLOW_GNU_DIALECT
+
+menu General
+  config VERSION_MAJOR
+    int
+    default 0
+
+  config VERSION_MINOR
+    int
+    default 1
+
+  config VERSION_PATCH
+    int
+    default 0
+
+  config VERSION_LOCAL_VERSION
+    string "Local version"
+    default ""
+    help
+      Appended to the end of version string
+  
+  config STRICTLY_POSIX
+    bool "Strict POSIX compliant"
+    default y
+    help
+      Disable any non POSIX 2008 libc or
+      platform specific API usage
+endmenu
